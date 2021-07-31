@@ -31,6 +31,8 @@ if (game.ask("girl", "boy")) {
         ......dd...dd...
         .....999...999..
         `, SpriteKind.Player)
+    controller.moveSprite(mySprite)
+    scene.cameraFollowSprite(mySprite)
 } else {
     girl = false
     mySprite2 = sprites.create(img`
@@ -61,4 +63,7 @@ if (game.ask("girl", "boy")) {
         .......5........
         .......f........
         `, SpriteKind.Player)
+    controller.moveSprite(mySprite2)
+    scene.cameraFollowSprite(mySprite2)
 }
+tiles.setTilemap(tilemap`level1`)
