@@ -1,4 +1,3 @@
-let mySprite2: Sprite = null
 let mySprite: Sprite = null
 let girl = false
 scene.setBackgroundColor(7)
@@ -31,11 +30,9 @@ if (game.ask("girl", "boy")) {
         ......dd...dd...
         .....999...999..
         `, SpriteKind.Player)
-    controller.moveSprite(mySprite)
-    scene.cameraFollowSprite(mySprite)
 } else {
     girl = false
-    mySprite2 = sprites.create(img`
+    mySprite = sprites.create(img`
         ........ff......
         ......ffffff....
         ......ffffff....
@@ -63,7 +60,7 @@ if (game.ask("girl", "boy")) {
         .......5........
         .......f........
         `, SpriteKind.Player)
-    controller.moveSprite(mySprite2)
-    scene.cameraFollowSprite(mySprite2)
 }
 tiles.setTilemap(tilemap`level1`)
+controller.moveSprite(mySprite)
+scene.cameraFollowSprite(mySprite)
