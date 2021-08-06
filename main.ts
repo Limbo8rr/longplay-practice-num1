@@ -13,8 +13,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         false
         )
         animation.runImageAnimation(
-        mySpritehead,
-        assets.animation`girl animation`,
+        mySpritefeet,;
+        [0],
         250,
         false
         )
@@ -53,6 +53,14 @@ if (game.ask("girl", "boy")) {
     girl = false
     info.setLife(160)
     mySpritehead = sprites.create(assets.image`boy`, SpriteKind.Player)
+    mySpritefeet = sprites.create(img`
+        . . . . . . . 5 5 5 5 . . . . . 
+        . . . . . . . 5 . . 5 . . . . . 
+        . . . . . . . 5 . . f . . . . . 
+        . . . . . . . 5 . . . . . . . . 
+        . . . . . . . 5 . . . . . . . . 
+        . . . . . . . f . . . . . . . . 
+        `, SpriteKind.Player)
 }
 mySpritehead.setFlag(SpriteFlag.GhostThroughWalls, true)
 tiles.setTilemap(tilemap`world1`)
