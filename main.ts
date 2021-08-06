@@ -4,17 +4,24 @@ enum ActionKind {
     Jumping,
     spinning
 }
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (girl == true) {
+    	
+    } else {
+    	
+    }
+})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (girl == true) {
         animation.runImageAnimation(
         mySpritehead,
-        assets.animation`girl animation`,
+        assets.animation`girl animationhead`,
         250,
         false
         )
         animation.runImageAnimation(
-        mySpritefeet,;
-        [0],
+        mySpritefeet,
+        assets.animation`girl animationfeet`,
         250,
         false
         )
