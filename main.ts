@@ -49,7 +49,9 @@ controller.menu.onEvent(ControllerButtonEvent.Pressed, function () {
         let game_paused = 0
         if (!(game_paused)) {
             for (let value of sprites.allOfKind(SpriteKind.Enemy)) {
-            	
+                sprites.setDataNumber(value, "prePauseVelocityX", value.vx)
+                sprites.setDataNumber(value, "vy", value.vy)
+                value.setVelocity(0, 0)
             }
             blockMenu.setControlsEnabled(true)
             blockMenu.showMenu([
@@ -58,14 +60,31 @@ controller.menu.onEvent(ControllerButtonEvent.Pressed, function () {
             "battle type",
             "config",
             "(anywhere shop)",
-            "2-player mode"
-            ], MenuStyle.List, MenuLocation.LeftHalf)
-        } else {
-        	
+            "2-player mode",
+            "close menu"
+            ], MenuStyle.List, MenuLocation.RightHalf)
         }
     } else {
-    	
+        for (let value of sprites.allOfKind(SpriteKind.Enemy)) {
+            sprites.setDataNumber(value, "prePauseVelocityX", value.vx)
+            sprites.setDataNumber(value, "vy", value.vy)
+            value.setVelocity(0, 0)
+        }
+        blockMenu.setControlsEnabled(false)
+        blockMenu.showMenu([
+        "item",
+        "equipment",
+        "battle type",
+        "config",
+        "(anywhere shop)",
+        "2-player mode",
+        "close menu",
+        "magic"
+        ], MenuStyle.List, MenuLocation.RightHalf)
     }
+})
+blockMenu.onMenuOptionSelected(function (option, index) {
+	
 })
 let boyAnimVersion = false
 let mySpritefeet: Sprite = null
