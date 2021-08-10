@@ -44,6 +44,29 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         boyAnimVersion = !(boyAnimVersion)
     }
 })
+controller.menu.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (girl == false) {
+        let game_paused = 0
+        if (!(game_paused)) {
+            for (let value of sprites.allOfKind(SpriteKind.Enemy)) {
+            	
+            }
+            blockMenu.setControlsEnabled(true)
+            blockMenu.showMenu([
+            "item",
+            "equipment",
+            "battle type",
+            "config",
+            "(anywhere shop)",
+            "2-player mode"
+            ], MenuStyle.List, MenuLocation.LeftHalf)
+        } else {
+        	
+        }
+    } else {
+    	
+    }
+})
 let boyAnimVersion = false
 let mySpritefeet: Sprite = null
 let mySpritehead: Sprite = null
