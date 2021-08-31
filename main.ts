@@ -4,6 +4,9 @@ enum ActionKind {
     Jumping,
     spinning
 }
+namespace StatusBarKind {
+    export const spirit = StatusBarKind.create()
+}
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (girl == true) {
     	
